@@ -10,20 +10,12 @@ class GoalController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
-        ]);
-
         $goal = Goal::create([
-            'user_id' => Auth::id(),
             'title' => $request->title,
-            'description' => $request->description,
+            'deadline' => $request->deadline,
+            'note' => $request->note,
         ]);
 
-        return response()->json([
-            'message' => 'Goal created successfully',
-            'goal' => $goal,
-        ], 201);
+        return response()->json($goal);
     }
 }

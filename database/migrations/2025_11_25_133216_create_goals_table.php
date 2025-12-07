@@ -9,14 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('goals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('title'); // 目標タイトル
-            $table->text('description')->nullable(); // 詳しい説明
-            $table->timestamps(); // created_at / updated_at
+            $table->string('title');
+            $table->date('deadline')->nullable();
+            $table->text('note')->nullable();
+            $table->timestamps();
         });
     }
 
