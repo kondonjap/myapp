@@ -10,5 +10,7 @@ Route::get('/goals', [GoalController::class, 'index']);
 Route::get('/goals/{id}', [GoalController::class, 'show']);
 // 登録
 Route::post('/goals', [GoalController::class, 'store']);
+// 更新
+Route::put('/goals/{id}', [GoalController::class, 'update']);
 // 削除
 Route::delete('/goals/{id}', [GoalController::class, 'destroy']);

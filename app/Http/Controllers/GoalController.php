@@ -33,6 +33,22 @@ class GoalController extends Controller
         return response()->json($goal);
     }
 
+    // 更新
+    public function update(Request $request, string $id)
+    {
+        $goal = \App\Models\Goal::findOrFail($id);
+
+        $data = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'deadline' => ['nullable', 'date'],
+            'note' => ['nullable', 'string'],
+        ]);
+
+        $goal->update($data);
+
+        return response()->json($goal);
+    }
+
     // 削除
     public function destroy(string $id)
     {
