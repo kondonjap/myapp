@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class GoalController extends Controller
 {
+
+     // 一覧
+    public function index()
+    {
+        return Goal::orderByDesc('id')->get();
+    }
+
+    // 登録
     public function store(Request $request)
     {
         $goal = Goal::create([
