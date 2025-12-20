@@ -15,6 +15,12 @@ class GoalController extends Controller
         return Goal::orderByDesc('id')->get();
     }
 
+    // 詳細
+    public function show(string $id)
+    {
+        return \App\Models\Goal::findOrFail($id);
+    }
+
     // 登録
     public function store(Request $request)
     {
