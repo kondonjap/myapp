@@ -32,4 +32,15 @@ class GoalController extends Controller
 
         return response()->json($goal);
     }
+
+    // 削除
+    public function destroy(string $id)
+    {
+        $goal = \App\Models\Goal::findOrFail($id);
+        $goal->delete();
+
+        return response()->json([
+            'message' => 'deleted'
+        ]);
+    }
 }
