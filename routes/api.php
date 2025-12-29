@@ -14,3 +14,9 @@ Route::post('/goals', [GoalController::class, 'store']);
 Route::put('/goals/{id}', [GoalController::class, 'update']);
 // 削除
 Route::delete('/goals/{id}', [GoalController::class, 'destroy']);
+
+Route::get('/idol/venues', [IdolVenueController::class, 'index']);
+Route::post('/idol/venues', [IdolVenueController::class, 'store']);
+
+Route::get('/idol/members', [IdolMemberController::class, 'index']);
+Route::post('/idol/members', [IdolMemberController::class, 'store']);
