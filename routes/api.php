@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\IdolVenueController;
 use App\Http\Controllers\IdolMemberController;
+use App\Http\Controllers\IdolEventController;
 
 
 // 一覧表示
