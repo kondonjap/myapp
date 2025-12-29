@@ -23,3 +23,7 @@ Route::post('/idol/venues', [IdolVenueController::class, 'store']);
 
 Route::get('/idol/members', [IdolMemberController::class, 'index']);
 Route::post('/idol/members', [IdolMemberController::class, 'store']);
+
+Route::get('/idol/events', [IdolEventController::class, 'index']);
+Route::post('/idol/events', [IdolEventController::class, 'store']);
+Route::get('/idol/events/{id}', [IdolEventController::class, 'show']);
